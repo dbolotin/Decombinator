@@ -296,7 +296,7 @@ def analysis( inputfile, outputfile, with_reverse_complement_search, species, ch
     print >> log_file, assigned_count_beta, 'TcR beta sequences were successfully assigned'
     print >> log_file, assigned_count_gamma, 'TcR gamma sequences were successfully assigned'
     print >> log_file, assigned_count_delta, 'TcR delta sequences were successfully assigned'
-    print >> log_file, 1-(20*error0_count+19*error1_count)/float(20*(error0_count+error1_count)), 'upper bound on sequencing error rate'
+    print >> log_file, (1-(20*error0_count+19*error1_count)/float(20*(error0_count+error1_count)) if error0_count+error1_count > 0 else 'unknown'), 'upper bound on sequencing error rate'
     print >> log_file, Nseqs, 'sequences contained ambiguous N nucleotides'
     print >> log_file, 'Time taken =', timed, 'seconds'
 
