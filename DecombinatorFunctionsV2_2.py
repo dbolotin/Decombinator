@@ -211,7 +211,7 @@ def analysis( inputfile, outputfile, with_reverse_complement_search, species, ch
             ## REVERSE COMPLEMENT
             #####################
             
-            record_reverse = record.reverse_complement()
+            record_reverse = record.reverse_complement(id=True)
             
             if (chain == "alpha") or (chain == "all"):
                 
